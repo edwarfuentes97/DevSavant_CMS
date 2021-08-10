@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {MatBottomSheetRef} from "@angular/material/bottom-sheet";
 
 
@@ -9,10 +9,11 @@ import {MatBottomSheetRef} from "@angular/material/bottom-sheet";
 })
 export class BottomSheetOverviewComponent implements OnInit {
 
+  @Output() newItemEvent = new EventEmitter<string>();
   constructor(private _bottomSheetRef: MatBottomSheetRef<BottomSheetOverviewComponent>) {}
 
-  openLink(event: MouseEvent): void {
-    this._bottomSheetRef.dismiss();
+  openLink(event: MouseEvent , type: string): void {
+    this._bottomSheetRef.dismiss(type);
     event.preventDefault();
   }
 

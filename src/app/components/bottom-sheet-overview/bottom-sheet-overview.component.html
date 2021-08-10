@@ -1,21 +1,17 @@
 <mat-nav-list>
-  <a href="https://keep.google.com/" mat-list-item (click)="openLink($event)">
-    <span mat-line>Google Keep</span>
-    <span mat-line>Add to a note</span>
+  <a href="#" mat-list-item (click)="openLink($event , 'image')">
+    <span mat-line>Image</span>
+    <span mat-line>Add image</span>
   </a>
 
-  <a href="https://docs.google.com/" mat-list-item (click)="openLink($event)">
-    <span mat-line>Google Docs</span>
-    <span mat-line>Embed in a document</span>
+  <a href="#" mat-list-item (click)="openLink($event , 'text')">
+    <span mat-line>Text Editor</span>
+    <span mat-line>Add rich text editor</span>
   </a>
 
-  <a href="https://plus.google.com/" mat-list-item (click)="openLink($event)">
-    <span mat-line>Google Plus</span>
-    <span mat-line>Share with your friends</span>
+  <a href="#" mat-list-item (click)="openLink($event , 'greeting')">
+    <span mat-line>Hellow Widget</span>
+    <span mat-line>What do you think of a personalized greeting?</span>
   </a>
 
-  <a href="https://hangouts.google.com/" mat-list-item (click)="openLink($event)">
-    <span mat-line>Google Hangouts</span>
-    <span mat-line>Show to your coworkers</span>
-  </a>
 </mat-nav-list>

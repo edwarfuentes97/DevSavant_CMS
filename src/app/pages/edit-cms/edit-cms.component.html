@@ -1,4 +1,7 @@
 <mat-card>
-  <button mat-raised-button (click)="openBottomSheet()">Add Widget</button>
+  <button mat-raised-button (click)="openBottomSheet()" color="primary" class="padding w100">Add Widget</button>
+  <app-widget-greeting [userName]="userName"> </app-widget-greeting>
+  <app-widget-image class="padding"></app-widget-image>
+  <app-widget-text class="padding"></app-widget-text>
 </mat-card>
 
