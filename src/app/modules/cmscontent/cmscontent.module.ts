@@ -24,7 +24,7 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {QuillModule} from "ngx-quill";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -51,7 +51,8 @@ import {FormsModule} from "@angular/forms";
     MatFormFieldModule,
     MatInputModule,
     QuillModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CmscontentModule { }

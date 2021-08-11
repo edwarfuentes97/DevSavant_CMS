@@ -1,7 +1,7 @@
-<mat-card class="example-card margin-top">
+<mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Hi, {{userName}} </mat-card-title>
+    <mat-card-title>Hi, {{userName}} <span class="clock">  your current time is  {{ clock | date : 'medium' }}</span> </mat-card-title>
     <mat-card-subtitle>Your last log in was in {{ date | date : 'medium'}} </mat-card-subtitle>
   </mat-card-header>
 </mat-card>

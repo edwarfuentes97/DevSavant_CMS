@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DataServiceService} from "../../services/data-service.service";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-preview-cms',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreviewCmsComponent implements OnInit {
 
-  constructor() { }
+  userName: string = environment.userName;
+  constructor(public dataService: DataServiceService) { }
 
   ngOnInit(): void {
   }

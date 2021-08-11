@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FileUploadService} from "../../services/file-upload.service";
 
 @Component({
@@ -17,11 +17,12 @@ export class WidgetImageComponent implements OnInit {
   previews: string[] = [];
   imageInfos?: any;
 
+  @Input() index: number | undefined;
+  private currentImage: any;
 
   constructor(private uploadService: FileUploadService) { }
 
   ngOnInit(): void {
-    console.log('this.uploadService.getFiles()', this.uploadService.getFiles().get('file'))
     this.imageInfos = this.uploadService.getFiles();
   }
 
@@ -38,6 +39,7 @@ export class WidgetImageComponent implements OnInit {
         const reader = new FileReader();
 
         reader.onload = (e: any) => {
+          this.currentImage = e.target.result;
           console.log(e.target.result);
           this.previews.push(e.target.result);
         };
@@ -52,17 +54,16 @@ export class WidgetImageComponent implements OnInit {
   upload(idx: number, file: File): void {
     this.progressInfos[idx] = { value: 0, fileName: file.name };
 
-    if (file) {
+    if (file && this.currentImage) {
       const msg = 'Uploaded the file successfully: ' + file.name;
       this.message.push(msg);
-      this.progressInfos[idx].value = Math.round(100 * 100 / 100);
-      this.uploadService.upload(file)
+      this.uploadService.upload(this.currentImage, this.index)
     }
   }
 
   uploadFiles(): void {
+    // TODO Implementation for multiple images
     this.message = [];
-
     if (this.selectedFiles) {
       for (let i = 0; i < this.selectedFiles.length; i++) {
         this.upload(i, this.selectedFiles[i]);

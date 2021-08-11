@@ -1,2 +1,5 @@
-<p>Text Editor</p>
-<quill-editor [(ngModel)]="RichTextValue" (onContentChanged)="showRichText()" ></quill-editor>
+<mat-card>
+  <mat-card-subtitle>You have to click the save button to confirm the data and it will show on the preview page</mat-card-subtitle>
+  <quill-editor [(ngModel)]="RichTextValue" (onContentChanged)="showRichText()" ></quill-editor>
+  <button mat-raised-button (click)="saveData()" color="primary" class=" margin">Save</button>
+</mat-card>

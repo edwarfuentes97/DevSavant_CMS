@@ -9,7 +9,8 @@ export class WidgetGreetingComponent implements OnInit {
 
   public date: Date = new Date();
   @Input() userName: string | undefined;
-  private clock: Date = new Date();
+  @Input() index: number | undefined;
+  public clock: Date = new Date();
 
   constructor() {
     setInterval(() => {
