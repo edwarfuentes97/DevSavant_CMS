@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "devSavantCms": {
+    "DevSavant_CMS": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/devSavantCms",
+            "outputPath": "dist/DevSavant_CMS",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -77,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "devSavantCms:build:production"
+              "browserTarget": "DevSavant_CMS:build:production"
             },
             "development": {
-              "browserTarget": "devSavantCms:build:development"
+              "browserTarget": "DevSavant_CMS:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "devSavantCms:build"
+            "browserTarget": "DevSavant_CMS:build"
           }
         },
         "test": {
@@ -113,5 +113,5 @@
       }
     }
   },
-  "defaultProject": "devSavantCms"
+  "defaultProject": "DevSavant_CMS"
 }
