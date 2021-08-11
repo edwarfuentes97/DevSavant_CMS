@@ -1,8 +1,0 @@
-<mat-card class="background">
-  <button mat-raised-button (click)="openBottomSheet()" color="primary" class="padding w100">Add Widget</button>
-  <div *ngFor="let widgets of dataService.dataPayload ; let i = index">
-    <app-widget-greeting [index]="i" *ngIf="widgets.greeting" class="padding-top" [userName]="userName"> </app-widget-greeting>
-    <app-widget-image [index]="i" *ngIf="widgets.images" class="padding-top"></app-widget-image>
-    <app-widget-text [index]="i" *ngIf="widgets.text" (newItemEvent)="showRichTextParen($event)"  class="padding-top"></app-widget-text>
-  </div>
-</mat-card>
